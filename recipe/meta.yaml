@@ -13,7 +13,7 @@ source:
     - 0001-setup.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [(not linux) or (cuda_compiler_version !=  "11.2")]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   missing_dso_whitelist:
@@ -34,7 +34,7 @@ requirements:
     - python
   run:
     - {{ pin_compatible('custatevec', max_pin='x') }}
-    - pennylane
+    - pennylane >=0.28
     - python
 test:
   imports:
