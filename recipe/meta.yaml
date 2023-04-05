@@ -1,5 +1,5 @@
 {% set name = "pennylane-lightning-gpu" %}
-{% set version = "0.29.0" %}
+{% set version = "0.29.1" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/PennyLaneAI/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e4cb8c496bddbb6c6cd27a6e1462cd3625952996222185dd0d7ec82e3cafea9b
+  sha256: 56ae36f55c0c605b4118bc18a756a5eb8266d81062481c1813ded462c7afb8e5
   patches:
     - 0001-setup.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [(not linux) or (cuda_compiler_version !=  "11.2")]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   missing_dso_whitelist:
