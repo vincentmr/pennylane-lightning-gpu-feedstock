@@ -1,5 +1,5 @@
 {% set name = "pennylane-lightning-gpu" %}
-{% set version = "0.29.1" %}
+{% set version = "0.30.0" %}
 
 
 package:
@@ -8,9 +8,7 @@ package:
 
 source:
   url: https://github.com/PennyLaneAI/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 56ae36f55c0c605b4118bc18a756a5eb8266d81062481c1813ded462c7afb8e5
-  patches:
-    - 0001-setup.patch
+  sha256: 95847a9bf83d084a3b03ea63ac0ce491441f9f2d06198bad58f28e343d382c16
 
 build:
   number: 0
