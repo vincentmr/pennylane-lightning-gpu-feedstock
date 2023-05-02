@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/PennyLaneAI/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 95847a9bf83d084a3b03ea63ac0ce491441f9f2d06198bad58f28e343d382c16
-  patches:
-    - 0001-setup.patch
 
 build:
   number: 0
