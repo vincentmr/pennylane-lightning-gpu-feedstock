@@ -31,7 +31,7 @@ requirements:
     - pybind11
     - python
     - libcublas-dev  # [(cuda_compiler_version or "").startswith("12")]
-    - cuda-version {{ cuda_compiler_version }}.*
+    - cuda-version {{ cuda_compiler_version }}
   run:
     - {{ pin_compatible('custatevec', max_pin='x') }}
     - pennylane >=0.28
