@@ -30,10 +30,13 @@ requirements:
     - pip
     - pybind11
     - python
+    - libcublas-dev  # [(cuda_compiler_version or "").startswith("12")]
+    - cuda-version {{ cuda_compiler_version }}.*
   run:
     - {{ pin_compatible('custatevec', max_pin='x') }}
     - pennylane >=0.28
     - python
+    - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 test:
   imports:
     - pennylane_lightning_gpu
