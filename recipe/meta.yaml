@@ -11,7 +11,7 @@ source:
   sha256: 95847a9bf83d084a3b03ea63ac0ce491441f9f2d06198bad58f28e343d382c16
 
 build:
-  number: 1
+  number: 2
   skip: true  # [(not linux) or (cuda_compiler_version not in ("11.2", "12.0"))]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   missing_dso_whitelist:
