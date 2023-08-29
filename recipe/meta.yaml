@@ -36,7 +36,7 @@ requirements:
     - cuda-version {{ cuda_compiler_version }}
   run:
     - {{ pin_compatible('custatevec', max_pin='x') }}
-    - pennylane >=0.31
+    - pennylane >=0.32
     - python
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 test:
