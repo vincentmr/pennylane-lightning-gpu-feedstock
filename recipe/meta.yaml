@@ -15,7 +15,7 @@ build:
   skip: true  # [(not linux) or (cuda_compiler_version not in ("11.2", "12.0"))]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   missing_dso_whitelist:
-    - '*/libcuda.*'  # [linux]
+    - '*/libcuda.*'   # [linux]
 
 requirements:
   build:
@@ -26,7 +26,7 @@ requirements:
     - ninja
   host:
     - {{ pin_compatible('custatevec', max_pin='x') }}
-    - libgomp      # [linux]
+    - libgomp          # [linux]
     - pip
     - pybind11
     - python
@@ -46,7 +46,7 @@ test:
     - python -c "import pennylane as qml; qml.about()"
     - pip check
   requires:
-    - setuptools # requirement from cvxpy
+    - setuptools       # requirement from cvxpy
     - flaky
     - pip
     - pytest
