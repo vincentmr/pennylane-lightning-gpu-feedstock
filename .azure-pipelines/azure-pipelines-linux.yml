@@ -40,7 +40,6 @@ jobs:
         CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.2cxx_compiler_version10python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.2
-  swapfile_size: 0GiB
   timeoutInMinutes: 360
 
   steps:
