@@ -42,8 +42,6 @@ requirements:
 test:
   imports:
     - pennylane_lightning
-    - pennylane_lightning.lightning_gpu
-    - pennylane_lightning.lightning_gpu_ops
   commands:
     - python -c "import pennylane as qml; qml.about()"
     - pip check
