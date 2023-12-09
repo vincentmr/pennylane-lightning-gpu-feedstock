@@ -23,7 +23,6 @@ requirements:
     - {{ compiler('cuda') }}
     - cmake
     - ninja
-    - pennylane >=0.33
   host:
     - {{ pin_compatible('custatevec', max_pin='x') }}
     - libgomp          # [linux]
