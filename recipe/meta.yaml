@@ -1,19 +1,19 @@
 {% set name = "pennylane-lightning-gpu" %}
-{% set version = "0.32.0" %}
-
+{% set version = "0.33.1" %}
+{% set build_num = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/PennyLaneAI/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 1ef601a05fd231863dbf2e0f0f77fa8f7ffc4f3994426ae3fd8ebec542cdb287
+  url: https://github.com/PennyLaneAI/pennylane-lightning/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 878f63cd1afadd52386b1aca9c0e3fb0a097b64ce8e347b325ebc7cac722e5e0
 
 build:
-  number: 0
+  number: {{ build_num }}
   skip: true  # [(not linux) or (cuda_compiler_version not in ("11.2", "12.0"))]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: PL_BACKEND=lightning_gpu {{ PYTHON }} -m pip install . --no-deps -vv
   missing_dso_whitelist:
     - '*/libcuda.*'   # [linux]
 
@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('cuda') }}
     - cmake
     - ninja
+    - pennylane >=0.33
   host:
     - {{ pin_compatible('custatevec', max_pin='x') }}
     - libgomp          # [linux]
@@ -35,21 +36,23 @@ requirements:
     - cuda-version {{ cuda_compiler_version }}
   run:
     - {{ pin_compatible('custatevec', max_pin='x') }}
-    - pennylane >=0.32
+    - pennylane >=0.33
     - python
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 test:
   imports:
-    - pennylane_lightning_gpu
+    - pennylane_lightning
+    - pennylane_lightning.lightning_gpu
+    - pennylane_lightning.lightning_gpu_ops
   commands:
     - python -c "import pennylane as qml; qml.about()"
     - pip check
   requires:
-    - setuptools       # requirement from cvxpy
     - flaky
     - pip
     - pytest
     - pytest-mock
+    - setuptools
 about:
   home: https://docs.pennylane.ai/projects/lightning-gpu/en/latest/
   summary: The PennyLane-Lightning-GPU plugin extends the Pennylane-Lightning state-vector simulator written in C++, and offloads to the NVIDIA cuQuantum SDK for GPU accelerated circuit simulation.
