@@ -50,7 +50,6 @@ test:
     - pip
     - pytest
     - pytest-mock
-    - setuptools
 about:
   home: https://docs.pennylane.ai/projects/lightning-gpu/en/latest/
   summary: The PennyLane-Lightning-GPU plugin extends the Pennylane-Lightning state-vector simulator written in C++, and offloads to the NVIDIA cuQuantum SDK for GPU accelerated circuit simulation.
