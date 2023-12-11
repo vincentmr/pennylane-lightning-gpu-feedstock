@@ -37,9 +37,13 @@ requirements:
     - cuda-version {{ cuda_compiler_version }}
   run:
     - {{ pin_compatible('custatevec', max_pin='x') }}
+    - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
+    - cudatoolkit                                       # [(cuda_compiler_version or "").startswith("11")]
+    - {{ pin_compatible('cuda-cudart', max_pin='x') }}  # [(cuda_compiler_version or "").startswith("12")]
+    - {{ pin_compatible('libcublas', max_pin='x') }}    # [(cuda_compiler_version or "").startswith("12")]
+    - {{ pin_compatible('libcusparse', max_pin='x') }}  # [(cuda_compiler_version or "").startswith("12")]
     - pennylane >=0.33
     - python
-    - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 test:
   imports:
     - pennylane_lightning
