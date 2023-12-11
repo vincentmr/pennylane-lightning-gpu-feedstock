@@ -36,7 +36,6 @@ requirements:
     - libcusparse-dev  # [(cuda_compiler_version or "").startswith("12")]
     - cuda-version {{ cuda_compiler_version }}
   run:
-    - {{ pin_compatible('custatevec', max_pin='x') }}
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
     - cudatoolkit                                       # [(cuda_compiler_version or "").startswith("11")]
     - pennylane >=0.33
