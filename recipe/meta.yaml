@@ -12,7 +12,7 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [(py==38) or (not linux) or (cuda_compiler_version not in ("11.8", "12.0"))]
+  skip: true  # [py==38 or (not linux) or (cuda_compiler_version not in ("11.8", "12.0"))]
   script: PL_BACKEND=lightning_gpu {{ PYTHON }} -m pip install . --no-deps -vv
   ignore_run_exports_from:
     - {{ compiler('cuda') }}
