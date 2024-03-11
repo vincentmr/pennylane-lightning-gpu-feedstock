@@ -1,5 +1,5 @@
 {% set name = "pennylane-lightning-gpu" %}
-{% set version = "0.34.0" %}
+{% set version = "0.35.0" %}
 {% set build_num = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/PennyLaneAI/pennylane-lightning/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 398c3a1d4450a9f3e146204c22329da9adc3f83a1685ae69187f3b25f47824c0
+  sha256: 1a16fd3dbf03788e4f8dd510bbb668e7a7073ca62be4d9414e2c32e0166e8bda
 
 build:
   number: {{ build_num }}
@@ -38,7 +38,7 @@ requirements:
   run:
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
     - cudatoolkit                                       # [(cuda_compiler_version or "").startswith("11")]
-    - pennylane >=0.34
+    - pennylane >=0.35
     - python
 test:
   imports:
