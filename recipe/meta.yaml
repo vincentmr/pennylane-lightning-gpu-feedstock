@@ -1,6 +1,6 @@
 {% set name = "pennylane-lightning-gpu" %}
 {% set version = "0.35.0" %}
-{% set build_num = 0 %}
+{% set build_num = 1 %}
 
 package:
   name: {{ name }}
