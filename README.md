@@ -250,5 +250,4 @@ Feedstock Maintainers
 
 * [@leofang](https://github.com/leofang/)
 * [@vincentmr](https://github.com/vincentmr/)
-* [@maliasadi](https://github.com/maliasadi/)
 
