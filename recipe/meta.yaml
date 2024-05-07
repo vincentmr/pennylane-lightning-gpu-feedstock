@@ -24,7 +24,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
-    - {{ stdlib("c") }}
     - cmake
     - ninja
   host:
