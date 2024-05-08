@@ -16,6 +16,13 @@ Current build status
 
 
 <table><tr>
+    <td>CircleCI</td>
+    <td>
+      <a href="https://circleci.com/gh/conda-forge/pennylane-lightning-gpu-feedstock">
+        <img alt="PowerPC64" src="https://img.shields.io/circleci/project/github/conda-forge/pennylane-lightning-gpu-feedstock/main.svg?label=PowerPC64">
+      </a>
+    </td>
+  </tr><tr>
     <td>Travis</td>
     <td>
       <a href="https://app.travis-ci.com/conda-forge/pennylane-lightning-gpu-feedstock">
