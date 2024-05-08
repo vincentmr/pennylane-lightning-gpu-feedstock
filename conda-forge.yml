@@ -8,5 +8,5 @@ github:
   tooling_branch_name: main
 provider:
   linux_aarch64: default
-  linux_ppc64le: circle
+  linux_ppc64le: native
 test: native_and_emulated
